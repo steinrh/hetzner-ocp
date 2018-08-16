@@ -267,14 +267,14 @@ When playbook is finished successfully you should have 4 VMs running.
 
 Installation of OCP is done on bastion host. So you need to ssh to bastion
 ```
-[root@CentOS-73-64-minimal hetzner-ocp]# ssh bastion
+[root@CentOS-73-64-minimal hetzner-ocp]# ssh cloud-user@bastion
 ```
 
 Installation is done with normal OCP installation playbooks. You can start installation on **bastion** with following commands
 
 ```
-[root@localhost ~]# ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml
-[root@localhost ~]# ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
+[cloud-user@localhost ~]# ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml
+[cloud-user@localhost ~]# ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
 ```
 
 When installation is done you can create new admin user and add hostpath persistent storage to registry with post install playbook.
